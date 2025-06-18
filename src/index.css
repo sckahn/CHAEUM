@@ -1,0 +1,146 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background-rgb: 251 248 241; /* #FBF8F1 */
+    --foreground-rgb: 51 65 85; /* Tailwind slate-700 */
+    
+    --card-rgb: 255 255 255;
+    --card-foreground-rgb: var(--foreground-rgb);
+
+    --primary-rgb: 52 211 153; /* Tailwind green-400 */
+    --primary-foreground-rgb: 255 255 255;
+
+    --secondary-rgb: 243 244 246; /* Tailwind gray-100 */
+    --secondary-foreground-rgb: var(--foreground-rgb);
+
+    --muted-rgb: 229 231 235; /* Tailwind gray-200 */
+    --muted-foreground-rgb: 107 114 128; /* Tailwind gray-500 */
+
+    --accent-rgb: 250 204 21; /* Tailwind yellow-400 */
+    --accent-foreground-rgb: var(--foreground-rgb);
+
+    --destructive-rgb: 239 68 68; /* Tailwind red-500 */
+    --destructive-foreground-rgb: 255 255 255;
+
+    --border-rgb: 229 231 235; /* Tailwind gray-200 */
+    --input-rgb: 209 213 219; /* Tailwind gray-300 */
+    --ring-rgb: var(--primary-rgb);
+
+    --radius: 0.5rem; /* Corresponds to rounded-md */ --background: 0 0% 100%; --foreground: 0 0% 3.9%; --card: 0 0% 100%; --card-foreground: 0 0% 3.9%; --popover: 0 0% 100%; --popover-foreground: 0 0% 3.9%; --primary: 0 0% 9%; --primary-foreground: 0 0% 98%; --secondary: 0 0% 96.1%; --secondary-foreground: 0 0% 9%; --muted: 0 0% 96.1%; --muted-foreground: 0 0% 45.1%; --accent: 0 0% 96.1%; --accent-foreground: 0 0% 9%; --destructive: 0 84.2% 60.2%; --destructive-foreground: 0 0% 98%; --border: 0 0% 89.8%; --input: 0 0% 89.8%; --ring: 0 0% 3.9%; --chart-1: 12 76% 61%; --chart-2: 173 58% 39%; --chart-3: 197 37% 24%; --chart-4: 43 74% 66%; --chart-5: 27 87% 67%;
+  }
+
+  .dark {
+    /* Dark mode colors can be defined here if needed in the future */
+    --background-rgb: 15 23 42; /* Tailwind slate-900 */
+    --foreground-rgb: 226 232 240; /* Tailwind slate-200 */
+
+    --card-rgb: 30 41 59; /* Tailwind slate-800 */
+    --card-foreground-rgb: var(--foreground-rgb);
+
+    --primary-rgb: 34 197 94; /* Tailwind green-500 */
+    --primary-foreground-rgb: var(--foreground-rgb);
+    
+    --secondary-rgb: 51 65 85; /* Tailwind slate-700 */
+    --secondary-foreground-rgb: var(--foreground-rgb);
+
+    --muted-rgb: 71 85 105; /* Tailwind slate-600 */
+    --muted-foreground-rgb: 148 163 184; /* Tailwind slate-400 */
+
+    --accent-rgb: 234 179 8; /* Tailwind yellow-500 */
+    --accent-foreground-rgb: var(--foreground-rgb);
+
+    --destructive-rgb: 220 38 38; /* Tailwind red-600 */
+    --destructive-foreground-rgb: var(--foreground-rgb);
+
+    --border-rgb: 51 65 85; /* Tailwind slate-700 */
+    --input-rgb: 71 85 105; /* Tailwind slate-600 */
+    --ring-rgb: var(--primary-rgb);
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-[color:rgb(var(--border-rgb)/1)];
+  }
+  body {
+    @apply bg-[color:rgb(var(--background-rgb)/1)] text-[color:rgb(var(--foreground-rgb)/1)];
+    font-family: 'Noto Sans KR', 'Inter', sans-serif; /* Added Inter as a fallback */
+  }
+}
+
+@layer components {
+  /* Styles based on the provided image */
+  .paragraph-char {
+    @apply inline-block; /* min-w-[1ch] */
+    font-feature-settings: "tnum"; /* Tabular numbers for consistent spacing if numbers were used */
+  }
+
+  .hint-letter-display {
+    @apply inline-flex items-center justify-center px-1.5 py-0.5 text-xs rounded bg-gray-200 text-gray-600 shadow-sm m-0.5;
+  }
+
+  .word-card-quiz {
+    @apply transition-all duration-200; /* Removed hover effect from here, apply specific if needed */
+  }
+
+  /* General component styling for consistency */
+  .card {
+    @apply bg-[color:rgb(var(--card-rgb)/1)] text-[color:rgb(var(--card-foreground-rgb)/1)];
+  }
+  .button-primary {
+    @apply bg-[color:rgb(var(--primary-rgb)/1)] text-[color:rgb(var(--primary-foreground-rgb)/1)];
+  }
+  .button-secondary {
+    @apply bg-[color:rgb(var(--secondary-rgb)/1)] text-[color:rgb(var(--secondary-foreground-rgb)/1)];
+  }
+  .input-default {
+    @apply bg-transparent border-[color:rgb(var(--input-rgb)/1)] focus:ring-[color:rgb(var(--ring-rgb)/1)] focus:border-[color:rgb(var(--ring-rgb)/1)];
+  }
+
+  /* Gradient background for dark mode (can be adjusted) */
+  .dark .gradient-bg {
+    @apply bg-gradient-to-br from-slate-900 via-slate-800 to-gray-900;
+  }
+  .gradient-bg-light { /* For light mode if needed */
+     @apply bg-gradient-to-br from-gray-50 via-stone-50 to-slate-50; /* Example light gradient */
+  }
+}
+
+
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
